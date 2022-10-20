@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid;
+        }
+        .box1 {
+            margin: 20px;
+            border: 1px solid;
+            width: 100px;
+        }
+        .box2 {
+            margin: 20px;
+            border: 1px solid;
+            height: 40px;
+            width: 200px;
+        }
+        .box3 {
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+        - 盒模型、盒子模型、框模型（box model）
+            - CSS将页面中的所有元素都设置为了一个矩形的盒子
+            - 将元素设置为矩形的盒子后，对页面的布局就变成将不同的盒子摆放到不同的位置
+            - 每一个盒子都由一下几个部分组成：
+                内容区（content）
+                内边距（padding）
+                边框（border）
+                外边距（margin）
+        - 块元素
+            - 块元素会在页面中独占一行(自上向下垂直排列)
+            - 默认宽度是父元素的全部（会把父元素撑满）
+            - 默认高度是被内容撑开（子元素）
+            - 外边距（margin）上下左右都生效
+
+        - 行内元素
+            - 行内元素不会独占页面的一行，只占自身的大小
+            - 行内元素在页面中左向右水平排列，如果一行之中不能容纳下所有的行内元素
+                则元素会换到第二行继续自左向右排列（书写习惯一致）
+            - 行内元素的默认宽度和高度都是被内容撑开
+            - 外边距（margin）上下不生效，左右生效
+     -->
+     <div class="box1">盒模型</div>
+
+     <div class="box">
+        <p class="box1">
+          块元素1
+        </p>
+        <p class="box2">
+          块元素2
+        </p>
+     </div>
+
+     <div class="box3"></div>
+
+     <div class="box">
+        <span class="box1">
+          行内元素1
+        </span>
+        <span class="box2">
+          行内元素2
+        </span>
+     </div>
+</body>
+</html>

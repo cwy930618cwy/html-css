@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p {
+            margin: 0;
+        }
+        /* 
+            字体相关的样式 
+                color 用来设置字体颜色
+                font-size 字体的大小
+                    和font-size相关的单位
+                    em 相当于当前元素的一个font-size
+                    rem 相对于根元素的一个font-size
+                font-family 字体族（字体的格式）
+                    可选值：
+                        serif  衬线字体
+                        sans-serif 非衬线字体
+                        monospace 等宽字体
+                            - 指定字体的类别，浏览器会自动使用该类别下的字体
+
+                    - font-family 可以同时指定多个字体，多个字体间使用,隔开
+                        字体生效时优先使用第一个，第一个无法使用则使用第二个 以此类推
+
+                        Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif
+        */
+        .p1 {
+            color:red;
+            font-size: 40px;
+        }
+        .p2 {
+            font-family: fantasy;
+        }
+        /* 
+            行高（line height）
+                - 行高指的是文字占有的实际高度
+                - 可以通过line-height来设置行高
+                    行高可以直接指定一个大小（px em）
+                    也可以直接为行高设置一个整数
+                        如果是一个整数的话，行高将会是字体的指定的倍数
+                - 行高经常还用来设置文字的行间距
+                    行间距 = 行高 - 字体大小
+
+            字体框
+                - 字体框就是字体存在的格子，设置font-size实际上就是在设置字体框的高度
+
+            行高会在字体框的上下平均分配
+        */
+        .box {
+            margin: 20px 0;
+            border: 1px solid;
+            height: 60px;
+        }
+        .p3 {
+            line-height: 60px;
+        }
+
+        /* 
+            text-align 文本的水平对齐
+                可选值：
+                    left 左侧对齐
+                    right 右对齐
+                    center 居中对齐
+                    justify 两端对齐
+        */
+        .p4 {
+            text-align: center;
+        }
+
+        /* 
+            背景
+                background-color 设置背景颜色
+                background-image 设置背景图片 
+                    - 可以同时设置背景图片和背景颜色，这样背景颜色将会成为图片的背景色
+                    - 如果背景的图片小于元素，则背景图片会自动在元素中平铺将元素铺满
+                    - 如果背景的图片大于元素，将会一个部分背景无法完全显示
+                    - 如果背景图片和元素一样大，则会直接正常显示
+                background-repeat 用来设置背景的重复方式
+                    可选值：
+                        repeat 默认值 ， 背景会沿着x轴 y轴双方向重复
+                        repeat-x 沿着x轴方向重复
+                        repeat-y 沿着y轴方向重复
+                        no-repeat 背景图片不重复
+                background-position 用来设置背景图片的位置
+                    设置方式：
+                        通过 top left right bottom center 几个表示方位的词来设置背景图片的位置
+                            使用方位词时必须要同时指定两个值，如果只写一个则第二个默认就是center
+
+                        通过偏移量来指定背景图片的位置：
+                            水平方向的偏移量 垂直方向变量
+        */
+        .p5{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            background-image: url("./img/1.png");
+            background-repeat: no-repeat;
+            background-position: 10px 10px;
+        }
+
+        /* 
+            渐变
+                通过渐变可以设置一些复杂的背景颜色，可以实现从一个颜色向其他颜色过渡的效果
+                ！！渐变是图片，需要通过background-image来设置
+
+                线性渐变，颜色沿着一条直线发生变化
+                    linear-gradient()
+
+                    linear-gradient(red,yellow) 红色在开头，黄色在结尾，中间是过渡区域
+                    - 线性渐变的开头，我们可以指定一个渐变的方向
+                        to left
+                        to right
+                        to bottom
+                        to top
+                        deg deg表示度数
+                        turn 表示圈
+
+                    - 渐变可以同时指定多个颜色，多个颜色默认情况下平均分布，
+                        也可以手动指定渐变的分布情况
+
+                    repeating-linear-gradient() 可以平铺的线性渐变
+        */
+        .p6 {
+            margin-top: 20px;
+            width: 200px;
+            height: 200px;
+            background-image: linear-gradient(red,yellow,#bfa,orange);
+        }
+        
+    </style>
+</head>
+<body>
+    <p class="p1">字体serif</p>
+    <p class="p2">字体fantasy</p>
+
+    <div class="box">
+        <p>未设置行高</p>
+    </div>
+    <div class="box">
+        <p class="p3">设置行高</p>
+    </div>
+
+    <div class="box p4">
+        <span>居中对齐</span>
+    </div>
+
+    <div class="p5"></div>
+
+    <div class="p6"></div>
+
+</body>
+</html>
